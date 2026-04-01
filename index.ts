@@ -26,6 +26,10 @@ while(true){
     
         default:
             break;
+
+        case 4:
+            descerMarcha(carro);
+            break;
     }
 }
 
@@ -44,4 +48,13 @@ function criaVeiculo(): Veiculo{
     veiculo.potencia = +teclado('Potência: ');
     veiculo.numeroMarchas = +teclado('Número de marchas: ');
     return veiculo;
+}
+
+function descerMarcha(veiculo: Veiculo): void {
+    if (veiculo.marchaAtual > 0) {
+        veiculo.marchaAtual--;
+        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    } else {
+        console.log("Você já está no ponto morto.");
+    }
 }
