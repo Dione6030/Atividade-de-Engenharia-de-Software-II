@@ -1,5 +1,6 @@
 import { Veiculo } from "./Veiculo";
 import prompt from "prompt-sync";
+import { writeFileSync } from "fs";
 
 const teclado = prompt();
 
@@ -26,6 +27,9 @@ while(true){
     
         default:
             break;
+        case 5:
+            imprimirDados(carro);
+            break;
     }
 }
 
@@ -45,3 +49,17 @@ function criaVeiculo(): Veiculo{
     veiculo.numeroMarchas = +teclado('Número de marchas: ');
     return veiculo;
 }
+
+function imprimirDados(veiculo: Veiculo): void{
+    const dados = [
+        `Marca: ${veiculo.marca}`,
+        `Modelo: ${veiculo.modelo}`,
+        `Potência: ${veiculo.potencia}`,
+        `Número de marchas: ${veiculo.numeroMarchas}`
+    ].join("\n");
+
+    console.log(dados);
+    writeFileSync("dados-veiculo.txt", dados, "utf8");
+    console.log("Dados salvos em dados-veiculo.txt");
+}
+// Escreve os dados do veículo em TXT, usa apenas as informações do criaVeiculo()
