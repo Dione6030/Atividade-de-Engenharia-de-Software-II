@@ -35,6 +35,11 @@ while(true){
         default:
             console.log("Opção inválida.");
             break;
+
+        case 4:
+            descerMarcha(carro);
+            break;
+        
         case 5:
             imprimirDados(carro);
             break;
@@ -74,6 +79,15 @@ function criaVeiculo(): Veiculo{
     veiculo.marchaAtual = 0;
     
     return veiculo;
+}
+
+function descerMarcha(veiculo: Veiculo): void {
+    if (veiculo.marchaAtual > 0) {
+        veiculo.marchaAtual--;
+        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    } else {
+        console.log("Você já está no ponto morto.");
+    }
 }
 
 function imprimirDados(veiculo: Veiculo): void{
