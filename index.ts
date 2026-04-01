@@ -30,6 +30,7 @@ while(true){
 
         case 4:
             descerMarcha(carro);
+            break;
         
         case 5:
             imprimirDados(carro);
