@@ -26,14 +26,9 @@ while(true){
         case 1:
             acelerar(carro);
             break;
+
         case 2:
             frear(carro); 
-            break;
-        case 5:
-            console.table(carro);
-            break;
-        default:
-            console.log("Opção inválida.");
             break;
 
         case 4:
