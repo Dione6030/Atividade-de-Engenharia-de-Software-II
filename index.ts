@@ -31,6 +31,10 @@ while(true){
             frear(carro); 
             break;
 
+        case 3:
+            subirMarcha(carro);
+            break;
+
         case 4:
             descerMarcha(carro);
             break;
@@ -74,6 +78,15 @@ function criaVeiculo(): Veiculo{
     veiculo.marchaAtual = 0;
     
     return veiculo;
+}
+
+function subirMarcha(veiculo: Veiculo): void {
+    if (veiculo.marchaAtual < veiculo.numeroMarchas) {
+        veiculo.marchaAtual++;
+        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    } else {
+        console.log("Você já está na última marcha!");
+    }
 }
 
 function descerMarcha(veiculo: Veiculo): void {
